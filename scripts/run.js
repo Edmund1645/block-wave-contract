@@ -20,6 +20,9 @@ async function main() {
   let waveTxn = await waveContract.wave('A nice wave'); // wait for transaction to be requested
   await waveTxn.wait(); // wait for transaction to be mined
 
+  let waveTxn2 = await waveContract.wave('Another nice wave');
+  await waveTxn2.wait();
+
   waveCount = await waveContract.getTotalWaves();
 
   contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
